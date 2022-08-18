@@ -2,7 +2,7 @@ import moment from 'moment';
 
 const NO_OF_DATAPOINTS = 90;
 
-export const graphs = [
+export const series = [
     {
         name: 'Units',
         color: '#00e396',
@@ -41,7 +41,6 @@ export const graphs = [
 ]
 
 export const getGraphData = () => {
-    const graphsArray = {...graphs};
     const todayDate = moment();
     let startDate = moment().subtract(NO_OF_DATAPOINTS, 'days');
     const unitsDataPointsArray = []
@@ -74,10 +73,5 @@ export const getGraphData = () => {
         startDate = startDate.add(1, 'days');
     }
     const array = [unitsDataPointsArray,profitMarginDataPointsArray, shippingCostDataPointsArray, amzCostPointsArray];
-    // debugger;
-    // graphsArray[1].data = profitMarginDataPointsArray;
-    // graphsArray[2].data = shippingCostDataPointsArray;
-    // graphsArray[3].data = amzCostPointsArray;
-    // debugger;
     return array;
 }

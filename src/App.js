@@ -4,7 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import moment from 'moment';
 
 import './App.css';
-import { getGraphData, graphs } from './utils/data';
+import { getGraphData, series } from './utils/data';
 
 function App() {
   const chartRef = useRef(null);
@@ -156,7 +156,7 @@ function App() {
         },
       },
     },
-    series: graphs,
+    series: series,
   };
 
   useEffect(() => {
